@@ -34,8 +34,8 @@ export default function Signup() {
     e.preventDefault();
     setErr(""); setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/register", form);
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      await axios.post("https://dev-pair-backendd.vercel.app/api/auth/register", form);
+      const res = await axios.post("https://dev-pair-backendd.vercel.app/api/auth/login", {
         email: form.email,
         password: form.password,
       });

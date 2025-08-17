@@ -20,7 +20,7 @@ export default function Profile() {
       const fd = new FormData();
       fd.append("avatar", file);
 
-      const res = await axios.post("http://localhost:5000/api/auth/avatar", fd, {
+      const res = await axios.post("https://dev-pair-backendd.vercel.app/api/auth/avatar", fd, {
         headers: {
           Authorization: token ? `Bearer ${token}` : undefined,
           "Content-Type": "multipart/form-data",

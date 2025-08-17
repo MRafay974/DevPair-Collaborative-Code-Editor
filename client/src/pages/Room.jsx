@@ -85,7 +85,7 @@ const Room = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/session/${roomId}`)
+      .get(`https://dev-pair-backendd.vercel.app/api/session/${roomId}`)
       .then((res) => {
         if (res.data) {
           const { code = "", chatHistory = [], language: lang = "javascript" } = res.data;
@@ -98,7 +98,7 @@ const Room = () => {
       })
       .catch(() => {
         axios
-          .post("http://localhost:5000/api/session", {
+          .post("https://dev-pair-backendd.vercel.app/api/session", {
             sessionId: roomId,
             code: "",
             language: "javascript",
@@ -116,7 +116,7 @@ const Room = () => {
     setSaveStatus("saving");
     
     try {
-      await axios.put(`http://localhost:5000/api/session/${roomId}`, {
+      await axios.put(`https://dev-pair-backendd.vercel.app/api/session/${roomId}`, {
         code: codeRef.current,
         chatHistory: messagesRef.current,
         language,
@@ -144,7 +144,7 @@ const Room = () => {
     setLoading(true);
     setOutput("");
     try {
-      const res = await axios.post("http://localhost:5000/api/execute", {
+      const res = await axios.post("https://dev-pair-backendd.vercel.app/api/execute", {
         language,
         code: codeRef.current,
       });

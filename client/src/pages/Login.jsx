@@ -36,7 +36,7 @@ export default function Login() {
     setErr("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("https://dev-pair-backendd.vercel.app/api/auth/login", form);
       login({ token: res.data.token, user: res.data.user });
       const params = new URLSearchParams(location.search);
       const redirect = params.get("redirect") || "/home";

@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 export const createSocket = () => {
   const token = localStorage.getItem("token"); // Adjust based on your auth implementation
   
-  const socket = io("http://localhost:5000", {
+  const socket = io("https://dev-pair-backendd.vercel.app", {
     auth: { token },
     autoConnect: true,
     reconnection: true,
