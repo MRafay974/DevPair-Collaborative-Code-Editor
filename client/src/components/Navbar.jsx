@@ -34,7 +34,7 @@ export default function Navbar() {
       fd.append("avatar", file);
 
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/auth/avatar", fd, {
+      const res = await axios.post("https://dev-pair-backendd.vercel.app/api/auth/avatar", fd, {
         headers: {
           Authorization: token ? `Bearer ${token}` : undefined,
           "Content-Type": "multipart/form-data",
