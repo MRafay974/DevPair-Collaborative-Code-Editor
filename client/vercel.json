@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/socket.io/(.*)", "destination": "https://dev-pair-backendd.vercel.app/socket.io/$1" },
+    { "source": "/api/(.*)", "destination": "https://dev-pair-backendd.vercel.app/api/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
